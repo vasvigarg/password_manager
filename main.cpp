@@ -8,7 +8,7 @@ using namespace std;
 int main() {
     int choice;
     string website, username, password;
-
+    Password p;
     while (true) {
         cout << "Password Manager" << endl;
         cout << "1. Add password" << endl;
@@ -27,20 +27,24 @@ int main() {
                 cin >> username;
                 cout << "Enter password: ";
                 cin >> password;
+                p.add_password(website, username, password);
                 break;
             case 2:
                 cout << "Enter website: ";
                 cin >> website;
+                p.view_password(website);
                 break;
             case 3:
                 cout << "Enter website: ";
                 cin >> website;
                 cout << "Enter new password: ";
                 cin >> password;
+                p.update_password(website, password);
                 break;
             case 4:
                 cout << "Enter website: ";
                 cin >> website;
+                p.delete_password(website);
                 break;
             case 5:
                 cout << "Exiting..." << endl;
